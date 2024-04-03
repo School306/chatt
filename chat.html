@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quán Bida XYZ</title>
+    <style>
+        /* CSS để tạo kiểu cho trang web */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://curious-koala-nc2nw2-dev-ed.trailblaze.my.salesforce.com',
+			'https://curious-koala-nc2nw2-dev-ed.trailblaze.my.salesforce-sites.com/liveAgentSetupFlow',
+			gslbBaseURL,
+			'00DGB000002F1RE',
+			'start1',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1-hn3.salesforceliveagent.com/content',
+				deploymentId: '572GB000000wkRy',
+				buttonId: '573GB000000wkS3',
+				baseLiveAgentURL: 'https://d.la1-c1-hn3.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'start1',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://curious-koala-nc2nw2-dev-ed.trailblaze.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=YOUR_APP_ID&autoLogAppEvents=1" nonce="NONCE_VALUE"></script>
+<div class="fb-customerchat" attribution=setup_tool page_id="YOUR_PAGE_ID"></div>
+    <header>
+        <h1>Quán Bida XYZ</h1>
+    </header>
+    <main>
+        <h2>Giới thiệu</h2>
+        <p>
+            Quán Bida XYZ là một quán bida chuyên nghiệp với các bàn bida hiện đại và không gian thoải mái.
+        </p>
+        
+        <h2>Dịch vụ</h2>
+        <ul>
+            <li>Bida chuyên nghiệp với các bàn bida chất lượng cao.</li>
+            <li>Đồ ăn và đồ uống phong phú.</li>
+            <li>Giải đấu bida hàng tháng.</li>
+            <li>Không gian thoải mái và tiện nghi.</li>
+        </ul>
+
+        <h2>Liên hệ</h2>
+        <p>
+            Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM<br>
+            Số điện thoại: 0123456789<br>
+            Email: info@quanbida.xyz
+        </p>
+    </main>
+    <footer>
+        &copy; 2024 Quán Bida XYZ. All rights reserved.
+    </footer>
+</body>
+</html>
